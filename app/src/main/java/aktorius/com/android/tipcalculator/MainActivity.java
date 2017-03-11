@@ -9,6 +9,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnTextChanged;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private float percentage = 0;
     private float tipTotal = 0;
-    private float finalBillAount = 0;
+    private float totalBillAmount = 0;
 
     private final float DEFAULT_TIP_PERCENT = 15;
     private final float REGULAR_TIP_PERCENT = 10;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         tipPercent.setText(getString(R.string.main_msg_tippercent, percentage));
         tipAmount.setText(getString(R.string.main_msg_tiptotal, tipTotal));
-        billTotalAmount.setText(getString(R.string.main_msg_billtotalresult, finalBillAount));
+        billTotalAmount.setText(getString(R.string.main_msg_billtotalresult, totalBillAmount));
     }
 
     @OnClick({R.id.regularService, R.id.goodService, R.id.excellentService})
@@ -60,5 +61,24 @@ public class MainActivity extends AppCompatActivity {
             default:
                 percentage = 0;
         }
+
+        calculateFinalBill();
+        setTipValues();
+    }
+
+    @OnTextChanged(R.id.editTextBillAmount)
+    public void onTextChanged(){
+        calculateFinalBill();
+        setTipValues();
+    }
+
+    private void calculateFinalBill() {
+        if (!editBillAmount.getText().toString().equals("") && !editBillAmount.getText().toString().equals("."))
+            totalBillAmount = Float.valueOf(editBillAmount.getText().toString());
+        else
+            totalBillAmount = 0;
+
+        tipTotal = (totalBillAmount*percentage)/100;
+        totalBillAmount += tipTotal;
     }
 }
