@@ -108,5 +108,59 @@
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:showDividers="middle">
 
+        <TextView
+            android:id="@+id/tvTipPercent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/main.msg.tippercent"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="@dimen/activity_vertical_margin"/>
+
+        <TextView
+            android:id="@+id/tvTipTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/main.msg.tiptotal"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="@dimen/activity_vertical_margin"/>
     </LinearLayout>
+
+    <View
+        android:id="@+id/vTipInformationSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/llTipInformation"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@color/colorLightGray" />
+
+    <TextView
+        android:id="@+id/tvBillTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vTipInformationSeparator"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/main.msg.billtotal"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceMedium"/>
+
+    <TextView
+        android:id="@+id/tvBillTotalAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBillTotal"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/main.msg.billtotalresult"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
 </RelativeLayout>
