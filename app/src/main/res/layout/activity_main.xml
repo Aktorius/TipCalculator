@@ -75,4 +75,38 @@
             android:backgroundTint="@color/colorBlue"
             android:src="@drawable/emoticon_excited"/>
     </LinearLayout>
+
+    <View
+        android:id="@+id/vRatingSeparators"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rlRatingButtons"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@color/colorLightGray" />
+
+    <TextView
+        android:id="@+id/textServiceRating"
+        android:text="@string/main.msg.servicerating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vRatingSeparators"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <LinearLayout
+        android:id="@+id/llTipInformation"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textServiceRating"
+        android:divider="?android:dividerHorizontal"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:showDividers="middle">
+
+    </LinearLayout>
 </RelativeLayout>
